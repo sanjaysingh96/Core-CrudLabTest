@@ -1,0 +1,79 @@
+﻿@model CoreLabTest.Models.RegModel
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+    <link href="~/css/loginstyle.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="logo text-center">
+        <h1>
+            <img src="~/images/logo.png" />
+        </h1>
+    </div>
+    <div class="wrapper">
+        <div class="inner-warpper text-center">
+            <h2 class="title">Create Your Account</h2>
+            <form asp-action="UserReg" asp-controller="Home" method="post">
+
+                <div class="input-group">
+                    <label class="palceholder" for="userPassword">Name</label>
+                    <input asp-for="Name" type="text" class="form-control" required/>
+                    <span asp-validation-for="Name" class="error"></span>
+                    <span class="lighting"></span>
+                </div>
+
+                <div class="input-group">
+                    <label class="palceholder" for="userPassword">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" required/>
+                    <span asp-validation-for="Email" class="error"></span>
+                    <span class="lighting"></span>
+                </div>
+
+                <div class="input-group">
+                    <label class="palceholder" for="userPassword">Mobile</label>
+                    <input asp-for="Mobile" type="number" class="form-control" required/>
+                    <span asp-validation-for="Mobile" class="error"></span>
+                    <span class="lighting"></span>
+                </div>
+
+                <div class="input-group">
+                    <label class="palceholder" for="userPassword">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" required/>
+                    <span asp-validation-for="Password" class="error"></span>
+                    <span class="lighting"></span>
+                </div>
+
+                <button type="submit" id="login">SingUp</button><br />
+                <a asp-action="Index" asp-controller="Home">Back To Home Page</a>
+            </form>
+        </div>
+        <div class="signup-wrapper text-center">
+            <span>Already have an accout? </span>
+            <a asp-action="Login" asp-controller="Home"><span class="text-primary">Login Here</span></a>
+        </div>
+    </div>
+
+
+    <!-- partial -->
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
+
+
+    <script src="~/js/loginjs/script.js"></script>
+
+</body>
+</html>
+
